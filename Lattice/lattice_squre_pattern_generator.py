@@ -65,7 +65,7 @@ class generate(object):
 
 
 
-        save_path = f"{pattern_px}pixel_{num_phase}phase_lattice_hex"
+        save_path = f"{pattern_px}pixel_{num_phase}phase_lattice_squre"
         # Check whether the specified path exists or not
         isExist = os.path.exists(save_path)
         if not isExist:
@@ -101,7 +101,7 @@ class generate(object):
             final.save('converted_pattern.bmp')
             im = Image.open('converted_pattern.bmp')
             im=im.convert('1')
-            im.save(os.path.join(save_path,f'phase{i}_pattern_px{pattern_px}_1bitimg.bmp'))
+            im.save(os.path.join(save_path,f'phase{i}_pattern_px{pattern_px}_1bit_squre.bmp'))
             im.close()
 
         tf.imshow(temp)

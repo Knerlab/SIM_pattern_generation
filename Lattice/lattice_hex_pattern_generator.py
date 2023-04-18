@@ -150,19 +150,19 @@ def save_phases_1bit(img, Npix, phase, alpha, save_path, slm_w, slm_l):
         cur_angle1_phase = crop_center_with_shift(image=img, crop_size=(slm_w, slm_l), shift=(0,-i*((Npix//phase))))
         temp = cur_angle1_phase.astype(np.uint8)
         final = Image.fromarray(temp)
-        final.save(os.path.join(save_path,f'angle_000_phase{i}.bmp'))
+        final.save(os.path.join(save_path,f'angle_000_phase{i}_hex.bmp'))
 
         ## angle 2
         cur_angle2_phase = crop_center_with_shift(image=img, crop_size=(slm_w, slm_l), shift=(-i*((Npix//phase//2*np.sqrt(3))),-i*((Npix//phase//2))))
         temp = cur_angle2_phase.astype(np.uint8)
         final = Image.fromarray(temp)
-        final.save(os.path.join(save_path,f'angle_060_phase{i}.bmp'))
+        final.save(os.path.join(save_path,f'angle_060_phase{i}_hex.bmp'))
 
         ## angle 3
         cur_angle2_phase = crop_center_with_shift(image=img, crop_size=(slm_w, slm_l), shift=(i*((Npix//phase//2*np.sqrt(3))),-i*((Npix//phase//2))))
         temp = cur_angle2_phase.astype(np.uint8)
         final = Image.fromarray(temp)
-        final.save(os.path.join(save_path,f'angle_120_phase{i}.bmp'))
+        final.save(os.path.join(save_path,f'angle_120_phase{i}_hex.bmp'))
 
     # plt.show()
     return img
